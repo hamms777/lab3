@@ -1,0 +1,137 @@
+/* Reset default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8fb;
+    color: #4f4650;
+}
+
+/* NAMED GRID AREAS */
+
+.header {
+    grid-area: header;
+    background-color: #f7c8d8;
+    color: #4f4650;
+    padding: 25px;
+    border: 2px solid #e5aabd;
+    border-radius: 10px;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: #dce8f7;
+    padding: 20px;
+    border: 2px solid #b8c9df;
+    border-radius: 10px;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #d8c8eb;
+    color: #4f4650;
+    padding: 20px;
+    border: 2px solid #c1acd8;
+    border-radius: 10px;
+}
+
+/* MOBILE LAYOUT */
+
+.page-wrapper {
+    display: grid;
+
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+}
+
+/* NAVIGATION */
+
+.nav ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.nav li {
+    padding: 12px 0;
+    border-bottom: 1px solid #b8c9df;
+}
+
+.nav li:last-child {
+    border-bottom: none;
+}
+
+.nav a {
+    color: #5b5363;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: #b06c87;
+}
+
+/* CONTENT CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.card {
+    padding: 20px;
+    border: 2px solid #e6ccd7;
+    border-radius: 10px;
+}
+
+.card1 {
+    background-color: #fff0f5;
+}
+
+.card2 {
+    background-color: #e8f4ea;
+}
+
+.card3 {
+    background-color: #fff3d9;
+}
+
+.card p {
+    margin-top: 10px;
+}
+
+/* DESKTOP LAYOUT */
+
+@media (min-width: 768px) {
+
+    .page-wrapper {
+        grid-template-areas:
+            "header header"
+            "nav main"
+            "footer footer";
+
+        grid-template-columns: 220px 1fr;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card1 {
+        grid-column: 1 / -1;
+    }
+}
